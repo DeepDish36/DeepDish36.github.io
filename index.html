@@ -1,628 +1,1074 @@
-<!DOCTYPE HTML>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | DeepDish36</title>
-    <meta
-      name="description"
-      content="Portfolio of a programming student passionate about exploring new technologies and computer hardware."
-    />
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of a developer with hands-on experience in C#, .NET, SQL, and computer hardware repair. Showcasing practical software projects, system optimization work, and ongoing learning in cybersecurity.">
+    <meta name="author" content="DeepDish36">
+    <meta name="keywords" content="programming, developer, portfolio, software development, computer hardware, cybersecurity, web development">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0f172a">
+    <link rel="canonical" href="https://DeepDish36.github.io/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Portfolio | DeepDish36">
+    <meta property="og:description" content="C# developer with real-world hardware experience, practical software projects, and a growing focus on cybersecurity.">
+    <meta property="og:image" content="https://DeepDish36.github.io/public/avatar.jpg">
+    <meta property="og:url" content="https://DeepDish36.github.io/">
+    <meta property="og:site_name" content="DeepDish36 Portfolio">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portfolio | DeepDish36">
+    <meta name="twitter:description" content="C# developer with real-world hardware experience, practical software projects, and a growing focus on cybersecurity.">
+    <meta name="twitter:image" content="https://DeepDish36.github.io/public/avatar.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/public/favicon.png">
+    <link rel="apple-touch-icon" href="/public/favicon.png">
+
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+        :root {
+            --bg-start: #0f172a;
+            --bg-mid: #1e293b;
+            --bg-end: #0f172a;
+            --surface: rgba(30, 41, 59, 0.5);
+            --surface-solid: #1e293b;
+            --border: #475569;
+            --text: #e2e8f0;
+            --text-muted: #cbd5e1;
+            --text-faint: #94a3b8;
+            --text-dim: #64748b;
+            --heading: #ffffff;
+            --accent: #3b82f6;
+            --accent-hover: #60a5fa;
+            --accent-dark: #2563eb;
+            --accent-soft: rgba(59, 130, 246, 0.2);
+            --accent-glow: rgba(59, 130, 246, 0.4);
+        }
 
-      body {
-        font-family:
-          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-          Cantarell, sans-serif;
-        background: linear-gradient(to bottom, #0f172a, #1e293b, #0f172a);
-        color: #e2e8f0;
-        line-height: 1.6;
-      }
-      
-      html {
-        scroll-behavior: smooth;
-      }
-      
-      /* Navigation */
-      nav {
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        background: rgba(15, 23, 42, 0.8);
-        backdrop-filter: blur(12px);
-        border-bottom: 1px solid #475569;
-      }
+        [data-theme="light"] {
+            --bg-start: #f8fafc;
+            --bg-mid: #e2e8f0;
+            --bg-end: #f1f5f9;
+            --surface: rgba(255, 255, 255, 0.7);
+            --surface-solid: #ffffff;
+            --border: #cbd5e1;
+            --text: #1e293b;
+            --text-muted: #334155;
+            --text-faint: #475569;
+            --text-dim: #64748b;
+            --heading: #0f172a;
+            --accent: #2563eb;
+            --accent-hover: #1d4ed8;
+            --accent-dark: #1d4ed8;
+            --accent-soft: rgba(37, 99, 235, 0.15);
+            --accent-glow: rgba(37, 99, 235, 0.3);
+        }
 
-      .nav-container {
-        max-width: 1536px;
-        margin: 0 auto;
-        padding: 1rem 1.5rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-      .logo {
-        font-size: 1.25rem;
-        font-weight: 700;
-        color: #fff;
-        text-decoration: none;
-      }
+        html {
+            scroll-behavior: smooth;
+        }
 
-      .nav-links {
-        display: flex;
-        gap: 2rem;
-        list-style: none;
-      }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(to bottom, var(--bg-start), var(--bg-mid), var(--bg-end));
+            color: var(--text);
+            line-height: 1.6;
+            transition: background 0.4s ease, color 0.4s ease;
+        }
 
-      .nav-links a {
-        color: #cbd5e1;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
+        /* Keyboard focus accessibility */
+        a:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
 
-      .nav-links a:hover {
-        color: #fff;
-      }
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: color-mix(in srgb, var(--bg-start) 80%, transparent);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border);
+        }
 
-      /* Hero Section */
-      .hero {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 2rem;
-        text-align: center;
-      }
+        .nav-container {
+            max-width: 1536px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-      .hero-content {
-        max-width: 800px;
-      }
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--heading);
+        }
 
-      .hero h1 {
-        font-size: clamp(2.5rem, 5vw, 4rem);
-        font-weight: 700;
-        margin-bottom: 1rem;
-        color: #fff;
-      }
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
 
-      .hero p {
-        font-size: 1.125rem;
-        color: #cbd5e1;
-        margin-bottom: 2rem;
-        line-height: 1.8;
-      }
-
-      .cta-button {
-        display: inline-block;
-        padding: 0.75rem 2rem;
-        background: linear-gradient(135deg, #3b82f6, #2563eb);
-        color: #fff;
-        text-decoration: none;
-        border-radius: 0.5rem;
-        transition:
-          transform 0.3s ease,
-          box-shadow 0.3s ease;
-        font-weight: 600;
-      }
-
-      .cta-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
-      }
-
-      .cta-buttons {
-        display: flex;
-        gap: 1rem;
-        justify-content: center;
-        flex-wrap: wrap;
-      }
-
-      .cta-button-secondary {
-        display: inline-block;
-        padding: 0.75rem 2rem;
-        background: transparent;
-        color: #cbd5e1;
-        text-decoration: none;
-        border-radius: 0.5rem;
-        border: 1px solid #475569;
-        transition:
-          transform 0.3s ease,
-          border-color 0.3s ease,
-          color 0.3s ease;
-        font-weight: 600;
-      }
-
-      .cta-button-secondary:hover {
-        transform: translateY(-2px);
-        border-color: #3b82f6;
-        color: #fff;
-      }
-
-      .hero-subtitle {
-        font-size: 1.25rem;
-        color: #94a3b8;
-        margin-bottom: 0.5rem;
-        font-weight: 500;
-      }
-
-      /* Sections */
-      section {
-        padding: 5rem 1.5rem;
-      }
-
-      .section-container {
-        max-width: 1024px;
-        margin: 0 auto;
-      }
-
-      section h2 {
-        font-size: 2.25rem;
-        font-weight: 700;
-        margin-bottom: 2rem;
-        color: #fff;
-      }
-
-      /* About Section */
-      #about {
-        background: transparent;
-      }
-
-      .about-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-        margin-bottom: 2rem;
-      }
-
-      .about-text p {
-        color: #cbd5e1;
-        font-size: 1.125rem;
-        margin-bottom: 1.5rem;
-        line-height: 1.8;
-      }
-
-      .skills-box {
-        background: rgba(30, 41, 59, 0.5);
-        border: 1px solid #475569;
-        border-radius: 0.5rem;
-        padding: 2rem;
-      }
-
-      .skills-box h3 {
-        font-size: 1.5rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        color: #fff;
-      }
-
-      .skills-list {
-        list-style: none;
-      }
-
-      .skills-list li {
-        display: flex;
-        align-items: center;
-        gap: 0.75rem;
-        margin-bottom: 0.75rem;
-        color: #cbd5e1;
-      }
-
-      .skill-icon {
-        width: 1.5rem;
-        height: 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1rem;
-      }
-
-      .skills-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 0.5rem 1.5rem;
-      }
-
-      .skill-category {
-        margin-bottom: 1.25rem;
-      }
-
-      .skill-category-title {
-        font-size: 0.85rem;
-        font-weight: 600;
-        color: #3b82f6;
-        text-transform: uppercase;
-        letter-spacing: 0.05em;
-        margin-bottom: 0.75rem;
-      }
-
-      /* Projects Section */
-      #projects {
-        background: rgba(30, 41, 59, 0.3);
-      }
-
-      .projects-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 1.5rem;
-      }
-
-      .project-card {
-        background: rgba(30, 41, 59, 0.5);
-        border: 1px solid #475569;
-        border-radius: 0.5rem;
-        padding: 1.5rem;
-        transition:
-          transform 0.3s ease,
-          border-color 0.3s ease;
-      }
-
-      .project-card:hover {
-        transform: translateY(-4px);
-        border-color: #3b82f6;
-      }
-
-      .project-card h3 {
-        font-size: 1.25rem;
-        font-weight: 600;
-        margin-bottom: 0.5rem;
-        color: #fff;
-      }
-
-      .project-card p {
-        color: #cbd5e1;
-        margin-bottom: 1rem;
-        font-size: 0.95rem;
-      }
-
-      .tags {
-        display: flex;
-        gap: 0.5rem;
-        flex-wrap: wrap;
-      }
-
-      .tag {
-        display: inline-block;
-        background: rgba(59, 130, 246, 0.2);
-        color: #93c5fd;
-        padding: 0.25rem 0.75rem;
-        border-radius: 9999px;
-        font-size: 0.85rem;
-      }
-
-      /* Repos Section */
-      #repos {
-        background: transparent;
-      }
-
-      .repos-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-        gap: 1.5rem;
-      }
-
-      .repo-card {
-        background: rgba(30, 41, 59, 0.5);
-        border: 1px solid #475569;
-        border-radius: 0.5rem;
-        padding: 2rem;
-        transition:
-          transform 0.3s ease,
-          border-color 0.3s ease;
-        display: flex;
-        flex-direction: column;
-      }
-
-      .repo-card:hover {
-        transform: translateY(-4px);
-        border-color: #3b82f6;
-      }
-
-      .repo-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: start;
-        margin-bottom: 1rem;
-      }
-
-      .repo-card h3 {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: #fff;
-        flex: 1;
-      }
-
-      .stars {
-        background: rgba(59, 130, 246, 0.2);
-        color: #93c5fd;
-        padding: 0.25rem 0.75rem;
-        border-radius: 9999px;
-        font-size: 0.85rem;
-        white-space: nowrap;
-      }
-
-      .repo-card p {
-        color: #cbd5e1;
-        margin-bottom: 1rem;
-        flex: 1;
-      }
-
-      .repo-footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-top: 1rem;
-        border-top: 1px solid #475569;
-      }
-
-      .language {
-        color: #94a3b8;
-        font-size: 0.85rem;
-      }
-
-      .repo-link {
-        color: #3b82f6;
-        text-decoration: none;
-        font-weight: 600;
-        transition: color 0.3s ease;
-      }
-
-      .repo-link:hover {
-        color: #60a5fa;
-      }
-
-      /* Footer */
-      footer {
-        border-top: 1px solid #475569;
-        padding: 3rem 1.5rem;
-        background: rgba(15, 23, 42, 0.5);
-        text-align: center;
-      }
-
-      .footer-links {
-        display: flex;
-        justify-content: center;
-        gap: 1.5rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .footer-links a {
-        color: #cbd5e1;
-        text-decoration: none;
-        transition: color 0.3s ease;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-      }
-
-      .footer-links a:hover {
-        color: #fff;
-      }
-
-      .footer-text {
-        color: #64748b;
-      }
-
-      /* Responsive */
-      @media (max-width: 768px) {
         .nav-links {
-          gap: 1rem;
-          font-size: 0.9rem;
+            display: flex;
+            gap: 2rem;
+            list-style: none;
         }
 
-        .about-grid {
-          grid-template-columns: 1fr;
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
 
-        .repos-grid {
-          grid-template-columns: 1fr;
+        .nav-links a:hover {
+            color: var(--heading);
         }
 
+        .theme-toggle {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: -20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, transparent 60%);
+            opacity: 0.25;
+            pointer-events: none;
+            filter: blur(40px);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            box-shadow: 0 0 40px var(--accent-glow);
+            margin: 0 auto 1.5rem;
+            display: block;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--heading);
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-faint);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 2rem;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: #fff;
+            text-decoration: none;
+            border-radius: 0.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-weight: 600;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px var(--accent-glow);
+        }
+
+        .cta-button-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 2rem;
+            background: transparent;
+            color: var(--text-muted);
+            text-decoration: none;
+            border-radius: 0.5rem;
+            border: 1px solid var(--border);
+            transition: transform 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+            font-weight: 600;
+        }
+
+        .cta-button-secondary:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+            color: var(--heading);
+        }
+
+        .icon {
+            width: 1.1em;
+            height: 1.1em;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+        
+        /* Sections */
         section {
-          padding: 3rem 1.5rem;
+            padding: 5rem 1.5rem;
+        }
+
+        .section-container {
+            max-width: 1024px;
+            margin: 0 auto;
         }
 
         section h2 {
-          font-size: 1.75rem;
+            font-size: 2.25rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--heading);
         }
-      }
+
+        /* Scroll fade-in animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+            .hero-avatar {
+                animation: none;
+            }
+            html {
+                scroll-behavior: auto;
+            }
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .experience-box {
+            position: relative;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, var(--accent-soft), transparent 62%), var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            overflow: hidden;
+        }
+
+        .experience-box::after {
+            content: "";
+            position: absolute;
+            width: 7rem;
+            height: 7rem;
+            right: -3rem;
+            top: -3rem;
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            opacity: 0.22;
+        }
+
+        .experience-box h3 {
+            position: relative;
+            z-index: 1;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            color: var(--heading);
+        }
+
+        .experience-group {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 1.25rem;
+            padding-left: 1rem;
+            border-left: 2px solid var(--accent);
+        }
+
+        .experience-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .experience-group-title {
+            color: var(--accent-hover);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            margin-bottom: 0.6rem;
+        }
+
+        .experience-list {
+            list-style: none;
+            display: grid;
+            gap: 0;
+        }
+
+        .experience-list li {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 0.35rem 1rem;
+            padding: 0.85rem 0;
+            color: var(--text-muted);
+            border-bottom: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+        }
+
+        .experience-list li:last-child {
+            border-bottom: 0;
+        }
+
+        .experience-list strong {
+            color: var(--heading);
+            font-weight: 700;
+        }
+
+        .experience-list span {
+            color: var(--accent-hover);
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .experience-list em {
+            grid-column: 1 / -1;
+            color: var(--text-faint);
+            font-size: 0.9rem;
+            font-style: italic;
+            line-height: 1.55;
+        }
+
+        .skills-box {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            padding: 2rem;
+        }
+
+        .skills-box h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--heading);
+        }
+
+        .skill-category {
+            margin-bottom: 1.25rem;
+        }
+
+        .skill-category-title {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.75rem;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: var(--accent-soft);
+            color: var(--accent-hover);
+            padding: 0.35rem 0.85rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid transparent;
+            transition: border-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .badge:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .badge .badge-icon {
+            font-size: 0.9rem;
+        }
+
+        .exploring-section {
+            position: relative;
+            margin-top: 2rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid color-mix(in srgb, var(--border) 70%, transparent);
+        }
+
+        .exploring-section h4 {
+            margin-bottom: 0.75rem;
+            color: var(--accent-hover);
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .exploring-list {
+            display: grid;
+            gap: 0.65rem;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .exploring-list li {
+            position: relative;
+            padding-left: 1.1rem;
+            color: var(--text-faint);
+            font-size: 0.95rem;
+            line-height: 1.55;
+        }
+
+        .exploring-list li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.65em;
+            width: 0.35rem;
+            height: 0.35rem;
+            border-radius: 50%;
+            background: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-soft);
+        }
+
+        /* Projects Section */
+        #projects {
+            background: var(--surface);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .project-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .project-thumb {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-body {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .project-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--heading);
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+            flex: 1;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            display: inline-block;
+            background: var(--accent-soft);
+            color: var(--accent-hover);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.85rem;
+        }
+
+        /* Repos Section */
+        .repos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .repo-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 2rem;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .repo-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .repo-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .repo-card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--heading);
+            flex: 1;
+            word-break: break-word;
+        }
+
+        .repo-card p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .repo-stats {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .repo-stat {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: var(--text-faint);
+            font-size: 0.85rem;
+        }
+
+        .repo-stat .icon {
+            width: 1em;
+            height: 1em;
+        }
+
+        .repo-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .language {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--text-faint);
+            font-size: 0.85rem;
+        }
+
+        .lang-dot {
+            width: 0.75rem;
+            height: 0.75rem;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .repo-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .repo-link:hover {
+            color: var(--accent-hover);
+        }
+
+        .repo-loading {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: var(--surface);
+            text-align: center;
+        }
+
+        .contact-intro {
+            max-width: 600px;
+            margin: 0 auto 2.5rem;
+            color: var(--text-muted);
+            font-size: 1.125rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .contact-card {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            background: var(--surface-solid);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            cursor: pointer;
+            padding: 1rem 1.75rem;
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 25px var(--accent-glow);
+        }
+
+        .contact-card .icon {
+            width: 1.4rem;
+            height: 1.4rem;
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 3rem 1.5rem;
+            background: color-mix(in srgb, var(--bg-start) 60%, transparent);
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--heading);
+        }
+
+        .footer-text {
+            color: var(--text-dim);
+        }
+
+        /* Back to Top */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            z-index: 60;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            box-shadow: 0 8px 20px var(--accent-glow);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-right {
+                gap: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .repos-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 1.5rem;
+            }
+
+            section h2 {
+                font-size: 1.75rem;
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <!-- Navigation -->
     <nav>
-      <div class="nav-container">
-        <a href="#" class="logo">DeepDish36</a>
-        <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#repos">Repos</a></li>
-        </ul>
-      </div>
+        <div class="nav-container">
+            <div class="logo">DeepDish36</div>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#repos">Repos</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme">
+                    <span id="themeIcon">&#x263D;</span>
+                </button>
+            </div>
+        </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-content">
-        <h1>DeepDish36</h1>
-        <p class="hero-subtitle">Software Developer & Tech Enthusiast</p>
-        <p>
-          Passionate about exploring new technologies and computer hardware. I
-          love building things that work efficiently and learning how systems
-          operate at their core.
-        </p>
-        <div class="cta-buttons">
-          <a href="#projects" class="cta-button">Check My Work</a>
-          <a href="#repos" class="cta-button-secondary">View Repos</a>
+        <div class="hero-content">
+            <img src="/public/avatar.jpg" alt="Portrait of the developer" class="hero-avatar" width="140" height="140">
+            <h1>DeepDish36</h1>
+            <p class="hero-subtitle">Software Developer & Tech Enthusiast</p>
+            <p>Passionate about exploring new technologies and computer hardware. I love building things that work efficiently and learning how systems operate at their core.</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="cta-button">Check My Work</a>
+                <a href="https://github.com/DeepDish36" class="cta-button-secondary" target="_blank" rel="noopener noreferrer" aria-label="Visit my GitHub profile (opens in new tab)">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+                    GitHub
+                </a>
+            </div>
         </div>
-      </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
-      <div class="section-container">
-        <h2>About Me</h2>
-        <div class="about-grid">
-          <div class="about-text">
-            <p>
-              I'm a passionate software development and cybersecurity student who enjoys exploring new technologies and building practical solutions. 
-              My journey in tech has allowed me to work with different programming languages, frameworks, and tools, constantly expanding my knowledge and problem-solving skills.
-            </p>
-            <p>
-              Currently, I'm focusing on software development, cybersecurity, and game development, always looking for opportunities to learn, collaborate, and contribute to meaningful projects.
-            </p>
-            <p>
-              Beyond programming, I have a strong interest in computer hardware. I enjoy building, upgrading, troubleshooting, and maintaining PCs, as well as understanding how hardware and software work together to create efficient and reliable systems.
-            </p>
-            <p>
-              I'm always open to new challenges, collaborations, and opportunities to grow as a developer and IT professional.
-            </p>
-          </div>
-          <div class="skills-box">
-                <h3>Skills &amp; Interests</h3>
-                <div class="skill-category">
-                    <p class="skill-category-title">Development</p>
-                    <ul class="skills-list skills-grid">
-                        <li><span class="skill-icon">&lt;/&gt;</span> Web Development</li>
-                        <li><span class="skill-icon">&#x2699;</span> Software Development</li>
-                    </ul>
+        <div class="section-container reveal">
+            <h2>About Me</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        I'm a passionate software development and cybersecurity student who enjoys exploring new technologies and building practical solutions. 
+                        My journey in tech has allowed me to work with different programming languages, frameworks, and tools, constantly expanding my knowledge and problem-solving skills.
+                        </p>
+                        <p>
+                        Currently, I'm focusing on software development, cybersecurity, and game development, always looking for opportunities to learn, collaborate, and contribute to meaningful projects.
+                        </p>
+                        <p>
+                        Beyond programming, I have a strong interest in computer hardware. I enjoy building, upgrading, troubleshooting, and maintaining PCs, as well as understanding how hardware and software work together to create efficient and reliable systems.
+                        </p>
+                        <p>
+                        I'm always open to new challenges, collaborations, and opportunities to grow as a developer and IT professional.
+                        </p>
+                    <div class="experience-box">
+                        <h3>Experience</h3>
+                        <div class="experience-group">
+                            <p class="experience-group-title">Personal</p>
+                            <ul class="experience-list">
+                                <li>
+                                    <strong>Programming</strong><span>4+ years</span>
+                                    <em>Web development, C#, .NET, SQL, and more</em>
+                                </li>
+                                <li>
+                                    <strong>Computer Repair &amp; Maintenance</strong><span>2+ years</span>
+                                    <em>Hardware, maintenance, diagnostics, and troubleshooting</em>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="experience-group">
+                            <p class="experience-group-title">Professional</p>
+                            <ul class="experience-list">
+                                <li>
+                                    <strong>Professional Experience</strong><span>6+ months</span>
+                                    <em>Applying technical skills in a professional environment</em>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-category">
-                    <p class="skill-category-title">Languages</p>
-                    <ul class="skills-list skills-grid">
-                        <li><span class="skill-icon">&#x2318;</span> Python</li>
-                        <li><span class="skill-icon">&#x2318;</span> C#</li>
-                        <li><span class="skill-icon">&#x2318;</span> JavaScript</li>
-                        <li><span class="skill-icon">&#x2318;</span> C</li>
-                        <li><span class="skill-icon">&#x2318;</span> HTML/CSS</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <p class="skill-category-title">Hardware &amp; Data</p>
-                    <ul class="skills-list skills-grid">
-                        <li><span class="skill-icon">&#x2B22;</span> PC Building &amp; Hardware Troubleshooting</li>
-                        <li><span class="skill-icon">&#x2630;</span> Relational Databases (MySQL &amp; SQL Server)</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <p class="skill-category-title">Tools &amp; Security</p>
-                    <ul class="skills-list skills-grid">
-                        <li><span class="skill-icon">&#x2316;</span> Git &amp; GitHub</li>
-                        <li><span class="skill-icon">&#x2620;</span> Linux &amp; Kali Linux</li>
-                        <li><span class="skill-icon">&#x1F5A7;</span> Cisco Packet Tracer</li>
-                        <li><span class="skill-icon">&#x1F6E1;</span> Cybersecurity Fundamentals</li>
-                    </ul>
-                </div>
-                <div class="skill-category">
-                    <p class="skill-category-title">Soft Skills</p>
-                    <ul class="skills-list skills-grid">
-                        <li><span class="skill-icon">&#x2605;</span> Problem Solving</li>
-                        <li><span class="skill-icon">&#x2764;</span> Teamwork &amp; Collaboration</li>
-                        <li><span class="skill-icon">&#x263A;</span> Empathy</li>
-                        <li><span class="skill-icon">&#x1F56E;</span> Continuous Learning</li>
-                    </ul>
+                <div class="skills-box">
+                    <h3>Skills & Interests</h3>
+                    <div class="skill-category">
+                        <p class="skill-category-title">Development</p>
+                        <div class="badges">
+                            <span class="badge"><span class="badge-icon">&lt;/&gt;</span> Web Development</span>
+                            <span class="badge"><span class="badge-icon">&#x2699;</span> Software Development</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <p class="skill-category-title">Languages</p>
+                        <div class="badges">
+                            <span class="badge"><span class="badge-icon">&#x2318;</span> Python</span>
+                            <span class="badge"><span class="badge-icon">&#x2318;</span> C#</span>
+                            <span class="badge"><span class="badge-icon">&#x2318;</span> JavaScript</span>
+                            <span class="badge"><span class="badge-icon">&#x2318;</span> C</span>
+                            <span class="badge"><span class="badge-icon">&#x2318;</span> HTML/CSS</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <p class="skill-category-title">Hardware & Data</p>
+                        <div class="badges">
+                            <span class="badge"><span class="badge-icon">&#x2B22;</span> PC Building & Hardware Troubleshooting</span>
+                            <span class="badge"><span class="badge-icon">&#x2630;</span> Relational Databases (MySQL & SQL Server)</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <p class="skill-category-title">Tools & Security</p>
+                        <div class="badges">
+                            <span class="badge"><span class="badge-icon">&#x2316;</span> Git & GitHub</span>
+                            <span class="badge"><span class="badge-icon">&#x2620;</span> Linux & Kali Linux</span>
+                            <span class="badge"><span class="badge-icon">&#x2316;</span> Cisco Packet Tracer</span>
+                            <span class="badge"><span class="badge-icon">&#x1F6E1;</span> Cybersecurity Fundamentals</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <p class="skill-category-title">Soft Skills</p>
+                        <div class="badges">
+                            <span class="badge"><span class="badge-icon">&#x2605;</span> Problem Solving</span>
+                            <span class="badge"><span class="badge-icon">&#x2764;</span> Teamwork & Collaboration</span>
+                            <span class="badge"><span class="badge-icon">&#x263A;</span> Empathy</span>
+                            <span class="badge"><span class="badge-icon">&#x1F56E;</span> Continuous Learning</span>
+                        </div>
+                    </div>
+                    <div class="exploring-section">
+                        <p class="skill-category-title">Currently Exploring</p>
+                        <div class="badges">
+                            <span class="badge"><span class="badge-icon"></span>Cybersecurity Fundamentals</span>
+                            <span class="badge"><span class="badge-icon"></span>Game Development</span>
+                            <span class="badge"><span class="badge-icon"></span>Advanced C# and .NET Development</span>
+                            <span class="badge"><span class="badge-icon"></span>PC Maintenance, Diagnostics, and Upgrades</span>
+                            <span class="badge"><span class="badge-icon"></span>Hardware Troubleshooting</span>
+                            <span class="badge"><span class="badge-icon"></span>System Optimization</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-      </div>
     </section>
 
     <!-- Projects Section -->
     <section id="projects">
-      <div class="section-container">
-        <h2>Featured Projects</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <h3>Puzzle House</h3>
-            <p>
-              Puzzle House is a 2D puzzle game developed in C with raylib. The game features 10 handcrafted levels built around progressively challenging logic puzzles and a clean minimalist aesthetic. Through this solo project, I designed and implemented core gameplay systems, input handling, and level management from scratch.
-            </p>
-            <div class="tags">
-              <span class="tag">C</span>
-              <span class="tag">raylib</span>
+        <div class="section-container reveal">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="/public/project-1.png" alt="Screenshot of a game in development" class="project-thumb" loading="lazy">
+                    <div class="project-body">
+                        <h3>Rimas Carnis</h3>
+                        <p>A 3D game inspired in boomer shooter games (in development)</p>
+                        <div class="tags">
+                            <span class="tag">Godot</span>
+                            <span class="tag">GDScript</span>
+                            <span class="tag">3D Game Development</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img src="/public/project-2.png" alt="Screenshot of a 2D puzzle game made in C" class="project-thumb" loading="lazy">
+                    <div class="project-body">
+                        <h3>Puzzle House</h3>
+                        <p>A 2D puzzle game made in C with Raylib featuring 10 levels</p>
+                        <div class="tags">
+                            <span class="tag">C</span>
+                            <span class="tag">Raylib</span>
+                            <span class="tag">2D Game Development</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <br />
-            <div class="repo-footer">
-              <a
-                href="https://github.com/DarkBox36/PuzzleHouse/releases/tag/Game"
-                class="repo-link"
-                >Download the game →</a
-              >
-            </div>
-          </div>
-          <div class="project-card">
-            <h3>Rimas Carnis</h3>
-            <p>3D first-person shooter inspired by classic DOOM and Quake titles. Focused on fast-paced movement, weapon systems, enemy AI and retro-style level design. Currently in active development.</p>
-            <div class="tags">
-              <span class="tag">GDScript</span>
-              <span class="tag">Blockbench</span>
-            </div>
-            <br>
-            <div class="repo-footer">
-              <a href="#"
-                class="repo-link"
-                >In development →</a
-              >
-            </div>
-          </div>
         </div>
-      </div>
     </section>
 
     <!-- GitHub Repos Section -->
     <section id="repos">
-      <div class="section-container">
-        <h2>Important Repositories</h2>
-        <div class="repos-grid">
-          <div class="repo-card">
-            <div class="repo-header">
-              <h3>SportMotos</h3>
-              <span class="stars">⭐ 5</span>
+        <div class="section-container reveal">
+            <h2>Important Repositories</h2>
+            <div class="repos-grid" id="reposGrid" data-user="DeepDish36" data-repos="C-6502,SportMotos">
+                <!-- Repo cards are injected here by JavaScript via the GitHub API -->
             </div>
-            <p>
-              A responsive website for a motorcycle dealership, featuring a
-              detailed catalog, modern design, and user-friendly navigation.
-              Built as my final academic project, it demonstrates both front-end
-              and back-end development skills.
-            </p>
-            <div class="repo-footer">
-              <span class="language">Javascript • HTML • CSS • ASP.NET • SQL Server</span>
-              <a
-                href="https://github.com/DeepDish36/SportMotos"
-                class="repo-link"
-                >View Repository →</a
-              >
-            </div>
-          </div>
-          <div class="repo-card">
-            <div class="repo-header">
-              <h3>C-6502</h3>
-              <span class="stars">⭐ 4</span>
-            </div>
-            <p>
-              C-6502 is a MOS 6502 emulator developed in C#. It allows users to write, execute and debug Assembly programs while exploring low-level programming concepts, CPU architecture and instruction execution, making it a practical resource for exploring
-              low-level programming concepts and computer architecture.
-            </p>
-            <div class="repo-footer">
-              <span class="language">C# • Emulation • Assembly</span>
-              <a href="https://github.com/DeepDish36/C-6502" class="repo-link"
-                >View Repository →</a
-              >
-            </div>
-          </div>
         </div>
-      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="section-container reveal">
+            <h2>Get In Touch</h2>
+            <p class="contact-intro">Have a project in mind, a question, or just want to say hi? I'm always open to new opportunities and collaborations. Feel free to reach out through any of the channels below.</p>
+            <div class="contact-methods">
+                <a href="mailto:andredeepgomes@gmail.com" class="contact-card" aria-label="Send me an email">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    Email
+                </a>
+                <a href="https://github.com/DeepDish36" class="contact-card" target="_blank" rel="noopener noreferrer" aria-label="Visit my GitHub (opens in new tab)">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.73.5.5 5.73.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.56-.29-5.25-1.28-5.25-5.7 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.43-2.69 5.41-5.26 5.69.41.36.78 1.06.78 2.14v3.17c0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.73 18.27.5 12 .5z"/></svg>
+                    GitHub
+                </a>
+                <a href="https://www.linkedin.com/in/andr%C3%A9-gomes-681976351/" class="contact-card" target="_blank" rel="noopener noreferrer" aria-label="Visit my LinkedIn (opens in new tab)">
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.34 17V10.5H6.27V17h2.07zM7.3 9.6a1.2 1.2 0 1 0 0-2.4 1.2 1.2 0 0 0 0 2.4zM18 17v-3.57c0-1.9-1.02-2.79-2.38-2.79-1.1 0-1.59.6-1.86 1.03v-.88h-2.07c.03.58 0 6.21 0 6.21h2.07v-3.47c0-.19.01-.37.07-.5.15-.37.49-.76 1.06-.76.75 0 1.05.57 1.05 1.4V17H18z"/></svg>
+                    LinkedIn
+                </a>
+                <button
+            class="contact-card discord-copy"
+            type="button"
+            aria-label="Copy my Discord username"
+                    >
+            <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
+            <path d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"/>
+            </svg>
+            Discord
+          </button>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer>
-      <div class="footer-links">
-        <a href="https://github.com/DeepDish36"
+        <div class="footer-links">
+            <a href="https://github.com/DeepDish36"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -667,8 +1113,334 @@
             /></svg
           >Email</a
         >
-      </div>
-      <p class="footer-text">&copy; 2026 DeepDish36</p>
+        </div>
+        <p class="footer-text">&copy; 2026 DeepDish36</p>
     </footer>
-  </body>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" style="width:1.3rem;height:1.3rem;"><path d="M12 8l-6 6 1.41 1.41L12 10.83l4.59 4.58L18 14z"/></svg>
+    </button>
+
+    <script>
+      // Theme toggle with system preference + persistence
+      (function () {
+        var root = document.documentElement;
+        var toggle = document.getElementById("themeToggle");
+        var icon = document.getElementById("themeIcon");
+
+        function applyTheme(theme) {
+          root.setAttribute("data-theme", theme);
+          icon.innerHTML = theme === "dark" ? "&#x263D;" : "&#x2600;";
+        }
+
+        var stored = null;
+        try {
+          stored = localStorage.getItem("theme");
+        } catch (e) {}
+        var initial =
+          stored ||
+          (window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: light)").matches
+            ? "light"
+            : "dark");
+        applyTheme(initial);
+
+        toggle.addEventListener("click", function () {
+          var next =
+            root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+          applyTheme(next);
+          try {
+            localStorage.setItem("theme", next);
+          } catch (e) {}
+        });
+      })();
+
+      // Scroll reveal animations
+      (function () {
+        var reveals = document.querySelectorAll(".reveal");
+        if (!("IntersectionObserver" in window)) {
+          reveals.forEach(function (el) {
+            el.classList.add("visible");
+          });
+          return;
+        }
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.15 },
+        );
+        reveals.forEach(function (el) {
+          observer.observe(el);
+        });
+      })();
+
+      // Back to top button
+      (function () {
+        var btn = document.getElementById("backToTop");
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 400) {
+            btn.classList.add("visible");
+          } else {
+            btn.classList.remove("visible");
+          }
+        });
+        btn.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      })();
+
+      // Copy Discord username
+      (function () {
+        var discordButton = document.querySelector(".discord-copy");
+        if (!discordButton) return;
+
+        var username = "deepdish8470";
+        var originalMarkup = discordButton.innerHTML;
+
+        function flashCopied() {
+          discordButton.innerHTML =
+            '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z" /></svg> Copied!';
+          discordButton.setAttribute("aria-label", "Discord username copied");
+          setTimeout(function () {
+            discordButton.innerHTML = originalMarkup;
+            discordButton.setAttribute("aria-label", "Copy my Discord username");
+          }, 1500);
+        }
+
+        function copyValue(value) {
+          if (navigator.clipboard && window.isSecureContext) {
+            navigator.clipboard.writeText(value);
+            return;
+          }
+
+          var helper = document.createElement("textarea");
+          helper.value = value;
+          helper.setAttribute("readonly", "");
+          helper.style.position = "fixed";
+          helper.style.top = "-9999px";
+          document.body.appendChild(helper);
+          helper.select();
+          try {
+            document.execCommand("copy");
+          } catch (e) {}
+          document.body.removeChild(helper);
+        }
+
+        discordButton.addEventListener("click", function () {
+          try {
+            copyValue(username);
+            flashCopied();
+          } catch (e) {
+            discordButton.innerHTML =
+              '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm1 15h-2v-2h2zm0-4h-2V7h2z" /></svg> Try Again';
+            setTimeout(function () {
+              discordButton.innerHTML = originalMarkup;
+            }, 1500);
+          }
+        });
+      })();
+
+      // Fetch GitHub repo data (stars, forks, last update) automatically
+      (function () {
+        var grid = document.getElementById("reposGrid");
+        if (!grid) return;
+        var user = grid.getAttribute("data-user");
+        var repos = grid
+          .getAttribute("data-repos")
+          .split(",")
+          .map(function (r) {
+            return r.trim();
+          });
+
+        function timeAgo(dateStr) {
+          var date = new Date(dateStr);
+          var seconds = Math.floor((Date.now() - date) / 1000);
+          var intervals = [
+            { label: "year", secs: 31536000 },
+            { label: "month", secs: 2592000 },
+            { label: "day", secs: 86400 },
+            { label: "hour", secs: 3600 },
+            { label: "minute", secs: 60 },
+          ];
+          for (var i = 0; i < intervals.length; i++) {
+            var count = Math.floor(seconds / intervals[i].secs);
+            if (count >= 1) {
+              return (
+                count +
+                " " +
+                intervals[i].label +
+                (count > 1 ? "s" : "") +
+                " ago"
+              );
+            }
+          }
+          return "just now";
+        }
+
+        function escapeHtml(str) {
+          if (!str) return "";
+          return str
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;");
+        }
+
+        function renderCard(data) {
+          var starIcon =
+            '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>';
+          var forkIcon =
+            '<svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3a3 3 0 0 0-1 5.83v2.34A3 3 0 0 0 8 14h3v2.17a3 3 0 1 0 2 0V14h3a3 3 0 0 0 3-2.83V8.83A3 3 0 1 0 16 3a3 3 0 0 0-1 5.83v2.34A1 1 0 0 1 14 12h-4a1 1 0 0 1-1-1V8.83A3 3 0 0 0 6 3z"/></svg>';
+          return (
+            "" +
+            '<div class="repo-card">' +
+            '<div class="repo-header">' +
+            "<h3>" +
+            escapeHtml(data.name) +
+            "</h3>" +
+            "</div>" +
+            "<p>" +
+            escapeHtml(data.description || "No description available.") +
+            "</p>" +
+            '<div class="repo-stats">' +
+            '<span class="repo-stat">' +
+            starIcon +
+            " " +
+            data.stargazers_count +
+            "</span>" +
+            '<span class="repo-stat">' +
+            forkIcon +
+            " " +
+            data.forks_count +
+            "</span>" +
+            '<span class="repo-stat">Updated ' +
+            timeAgo(data.updated_at) +
+            "</span>" +
+            "</div>" +
+            '<div class="repo-footer">' +
+            '<span class="language">' +
+            (data.language
+              ? '<span class="lang-dot"></span>' + escapeHtml(data.language)
+              : "N/A") +
+            "</span>" +
+            '<a href="' +
+            escapeHtml(data.html_url) +
+            '" class="repo-link" target="_blank" rel="noopener noreferrer">View Repository &rarr;</a>' +
+            "</div>" +
+            "</div>"
+          );
+        }
+
+        function renderError(name, message) {
+          return (
+            "" +
+            '<div class="repo-card">' +
+            '<div class="repo-header"><h3>' +
+            escapeHtml(name) +
+            "</h3></div>" +
+            '<p class="repo-loading">' +
+            escapeHtml(
+              message ||
+                "Could not load repository data. Check the repository name.",
+            ) +
+            "</p>" +
+            '<div class="repo-footer">' +
+            '<span class="language">N/A</span>' +
+            '<a href="https://github.com/' +
+            encodeURIComponent(user) +
+            "/" +
+            encodeURIComponent(name) +
+            '" class="repo-link" target="_blank" rel="noopener noreferrer">View Repository &rarr;</a>' +
+            "</div>" +
+            "</div>"
+          );
+        }
+
+        // Cache GitHub responses in localStorage for 1 hour to avoid
+        // hammering the API (unauthenticated calls are limited to 60/hour/IP).
+        var CACHE_TTL = 60 * 60 * 1000;
+
+        function cacheKey(repo) {
+          return "ghrepo:" + user + "/" + repo;
+        }
+
+        function readCache(repo) {
+        try {
+            var raw = localStorage.getItem(cacheKey(repo));
+            if (!raw) return null;
+
+            var parsed = JSON.parse(raw);
+
+            return {
+            data: parsed.d,
+            stale: Date.now() - parsed.t > CACHE_TTL,
+            };
+        } catch (e) {
+            return null;
+        }
+        }
+
+        function writeCache(repo, data) {
+          try {
+            localStorage.setItem(
+              cacheKey(repo),
+              JSON.stringify({ t: Date.now(), d: data }),
+            );
+          } catch (e) {}
+        }
+
+        grid.innerHTML =
+          '<p class="repo-loading">Loading repositories from GitHub...</p>';
+
+        Promise.all(
+          repos.map(function (repo) {
+            var cached = readCache(repo);
+
+                if (cached && !cached.stale) {
+                return Promise.resolve(renderCard(cached.data));
+                }
+
+                return fetch("https://api.github.com/repos/" + user + "/" + repo)
+              .then(function (res) {
+                if (res.status === 403) {
+                  // Rate limited: fall back to any stale cache, else show a clear message.
+                  var rateReset = res.headers.get("x-ratelimit-reset");
+                  var msg =
+                    "GitHub API rate limit reached (60 requests/hour for anonymous users).";
+                  if (rateReset) {
+                    var when = new Date(parseInt(rateReset, 10) * 1000);
+                    msg +=
+                      " Try again after " + when.toLocaleTimeString() + ".";
+                  }
+                  var err = new Error(msg);
+                  err.rateLimited = true;
+                  throw err;
+                }
+                if (!res.ok)
+                  throw new Error(
+                    "Repository not found. Check the name in data-repos.",
+                  );
+                return res.json();
+              })
+              .then(function (data) {
+                writeCache(repo, data);
+                return renderCard(data);
+              })
+              .catch(function (err) {
+                return renderError(repo, err && err.message);
+              });
+          }),
+        ).then(function (cards) {
+          grid.innerHTML = cards.join("");
+        });
+      })();
+    </script>
+</body>
 </html>
